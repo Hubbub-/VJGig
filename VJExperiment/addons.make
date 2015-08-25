@@ -1,0 +1,7 @@
+ofxGui
+ofxXmlSettings
+ofxBeat
+ofxPostProcessing
+ofxRules
+ofxStateMachine
+ofxSyphon
