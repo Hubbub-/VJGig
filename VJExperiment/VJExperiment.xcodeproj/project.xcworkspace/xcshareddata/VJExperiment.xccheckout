@@ -16,6 +16,8 @@
 		<string>https://github.com/neilmendoza/ofxRules.git</string>
 		<key>679F9D8E6CB0C13FD53A3E1583A96DE8756165D2</key>
 		<string>https://github.com/Hubbub-/VJGig.git</string>
+		<key>7E804D925461714118DB355C65BC964B41D94376</key>
+		<string>https://github.com/rezaali/ofxUI.git</string>
 		<key>95F70890EFD46183734FEDFE52CF53391DE6937E</key>
 		<string>https://github.com/neilmendoza/ofxPostProcessing.git</string>
 		<key>E1973EE936B32FD6C1A9080FB86363F99151DFAC</key>
@@ -28,17 +30,19 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5431C3098324239824B3A313883F8CE1A84C3E6A</key>
-		<string>../../../../../addons/ofxStateMachine</string>
+		<string>../../../../addons/ofxStateMachine</string>
 		<key>6506D325463CDB542D1DC55ECEDFB5E68AD397D9</key>
-		<string>../../../../../addons/ofxRules</string>
+		<string>../../../../addons/ofxRules</string>
 		<key>679F9D8E6CB0C13FD53A3E1583A96DE8756165D2</key>
 		<string>../../..</string>
+		<key>7E804D925461714118DB355C65BC964B41D94376</key>
+		<string>../../../../../addons/ofxUI</string>
 		<key>95F70890EFD46183734FEDFE52CF53391DE6937E</key>
-		<string>../../../../../addons/ofxPostProcessing</string>
+		<string>../../../../addons/ofxPostProcessing</string>
 		<key>E1973EE936B32FD6C1A9080FB86363F99151DFAC</key>
-		<string>../../../../../addons/ofxBeat</string>
+		<string>../../../../addons/ofxBeat</string>
 		<key>F4CCB893AFADB97238A965FD2F28717F1CAAE613</key>
-		<string>../../../../../addons/ofxSyphon</string>
+		<string>../../../../addons/ofxSyphon</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Hubbub-/VJGig.git</string>
@@ -87,6 +91,14 @@
 			<string>F4CCB893AFADB97238A965FD2F28717F1CAAE613</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxSyphon</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7E804D925461714118DB355C65BC964B41D94376</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxUI</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

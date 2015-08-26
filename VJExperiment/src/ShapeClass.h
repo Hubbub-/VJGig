@@ -37,8 +37,12 @@ public:
     float rotationY = 0.0;
     float rotationZ = 0.0;
     
-    float * fftSmooth;
-    int bands;
+    float shapeRad = 10.0;
+    
+    bool expanding = false;
+    
+//    float * fftSmooth;
+//    int bands;
 };
 
 

@@ -6,6 +6,7 @@
 #include "ofxPostProcessing.h"
 #include "ofxBeat.h"
 
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -28,6 +29,10 @@ class ofApp : public ofBaseApp{
     
     // scene stuff
     ofxPostProcessing post;
+    
+    bool kickHit;
+    bool snareHit;
+    bool cymbalHit;
     
 
     
