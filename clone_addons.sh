@@ -6,8 +6,8 @@
 cd ../../addons/
 
 git clone https://github.com/neilmendoza/ofxRules.git
-git clone https://github.com/neilmendoza/ofxPostProcessing.git
 git clone https://github.com/neilmendoza/ofxStateMachine.git
+git clone https://github.com/darrenmothersele/ofxBeat.git
 
 
 
