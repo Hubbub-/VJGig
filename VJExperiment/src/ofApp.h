@@ -5,6 +5,7 @@
 #include "ofxGui.h"
 #include "ofxPostProcessing.h"
 #include "ofxBeat.h"
+#include "ofxSyphon.h"
 
 
 class ofApp : public ofBaseApp{
@@ -29,11 +30,15 @@ class ofApp : public ofBaseApp{
     
     // scene stuff
     ofxPostProcessing post;
+
     
     bool kickHit;
     bool snareHit;
     bool cymbalHit;
     
+
+    ofxSyphonServer syphonOut;
+
 
     
     ofParameter<float> volume;

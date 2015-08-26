@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 
+
 class ShapeClass {
 public:
     void setup();
@@ -37,12 +38,15 @@ public:
     float rotationY = 0.0;
     float rotationZ = 0.0;
     
+
     float shapeRad = 10.0;
     
     bool expanding = false;
     
 //    float * fftSmooth;
 //    int bands;
+    
+
 };
 
 

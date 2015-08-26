@@ -53,6 +53,10 @@ void ofApp::setup(){
     post.createPass<SSAOPass>()->setEnabled(false);
     
     post.createPass<PixelatePass>()->setEnabled(false);
+
+    syphonOut.setName("HubbubVJ");
+    
+
 }
 
 //--------------------------------------------------------------
@@ -95,7 +99,10 @@ void ofApp::draw(){
     shape01.draw();
     shape02.draw();
     post.end();
-    gui.draw();
+    
+    syphonOut.publishScreen();
+    
+    
     
     // draw help
     ofSetColor(0, 255, 255);
@@ -109,7 +116,8 @@ void ofApp::draw(){
         oss << i << ": " << post[i]->getName() << (post[i]->getEnabled()?" (on)":" (off)");
         ofDrawBitmapString(oss.str(), ofGetWidth() -400, 20 * (i + 2));
     }
-
+    
+    gui.draw();
 }
 
 //--------------------------------------------------------------
