@@ -4,6 +4,7 @@
 #include "ShapeClass.h"
 #include "ofxGui.h"
 #include "ofxPostProcessing.h"
+#include "ofxBeat.h"
 
 class ofApp : public ofBaseApp{
 
@@ -23,29 +24,23 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         void exit();
     
-    void audioIn(float * input, int bufferSize, int nChannels);
+       void audioReceived(float*, int, int);
     
     // scene stuff
     ofxPostProcessing post;
     
-    vector <float> left;
-    vector <float> right;
-    vector <float> volHistory;
-    
-    int 	bufferCounter;
-    int 	drawCounter;
-    
-    float smoothedVol;
-    float scaledVol;
+
     
     ofParameter<float> volume;
     ofParameter<float> speed;
     ofParameterGroup guiGroup;
     
     ShapeClass shape01;
+    ShapeClass shape02;
     
-    ofSoundStream soundStream;
-    ofSoundPlayer beat;
+    ofSoundPlayer player;
+    
+    ofxBeat beat;
     
     ofxPanel gui;
     
