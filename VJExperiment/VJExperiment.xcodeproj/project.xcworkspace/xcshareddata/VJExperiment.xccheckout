@@ -18,6 +18,8 @@
 		<string>https://github.com/Hubbub-/VJGig.git</string>
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
 		<string>https://github.com/rezaali/ofxUI.git</string>
+		<key>90E2F969A762FB62C413A0C44D1F334E6EC3F531</key>
+		<string>https://github.com/danomatika/ofxMidi.git</string>
 		<key>95F70890EFD46183734FEDFE52CF53391DE6937E</key>
 		<string>https://github.com/neilmendoza/ofxPostProcessing.git</string>
 		<key>E1973EE936B32FD6C1A9080FB86363F99151DFAC</key>
@@ -37,6 +39,8 @@
 		<string>../../..</string>
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
 		<string>../../../../addons/ofxUI</string>
+		<key>90E2F969A762FB62C413A0C44D1F334E6EC3F531</key>
+		<string>../../../../../addons/ofxMidi</string>
 		<key>95F70890EFD46183734FEDFE52CF53391DE6937E</key>
 		<string>../../../../addons/ofxPostProcessing</string>
 		<key>E1973EE936B32FD6C1A9080FB86363F99151DFAC</key>
@@ -59,6 +63,14 @@
 			<string>E1973EE936B32FD6C1A9080FB86363F99151DFAC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxBeat</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>90E2F969A762FB62C413A0C44D1F334E6EC3F531</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxMidi</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
