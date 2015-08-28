@@ -69,7 +69,8 @@ void ShapeClass::draw() {
 //--------------------------------------------------------------
 void ShapeClass::randomise(){
     
-    circleRes = ofRandom(3.0, 60.0);
+    if(ofRandom(10) < 3) circleRes = ofRandom(3.0, 10.0);
+    else circleRes = ofRandom(3.0, 60.0);
     release = ofRandom(1.0);
     size = ofRandom(30.0);
     

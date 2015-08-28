@@ -172,18 +172,17 @@ void ofApp::randomise(){
     shape01.randomise();
     shape02.randomise();
     shape03.randomise();
-    for (unsigned i = 0; i < post.size(); i++){
-        if(ofRandom(10.0) < 3) post[i]->setEnabled(true);
-        else post[i]->setEnabled(false);
-    }
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    unsigned idx = key - '0';
+    unsigned idx = key - '0' + tens*10;
     if (idx < post.size()) post[idx]->setEnabled(!post[idx]->getEnabled());
     
     if (key == 'r') randomise();
+    
+    if (key == 'z') tens = 1;
 }
 
 //--------------------------------------------------------------
@@ -224,7 +223,7 @@ void ofApp::postChainToggle() {
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+    if (key == 'z') tens = 0;
 }
 
 //--------------------------------------------------------------
