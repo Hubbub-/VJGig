@@ -15,10 +15,12 @@ void ofApp::setup(){
     
     shape01.setup();
     shape02.setup();
+    shape03.setup();
     
     guiGroup.setName("CONTROLS");
     guiGroup.add(shape01.shapeParams);
     guiGroup.add(shape02.shapeParams);
+    guiGroup.add(shape03.shapeParams);
     
     
     gui.setup(guiGroup);
@@ -40,19 +42,19 @@ void ofApp::setup(){
     post.createPass<BleachBypassPass>()->setEnabled(false);
     post.createPass<EdgePass>()->setEnabled(true);
     post.createPass<VerticalTiltShifPass>()->setEnabled(false);
-    
+    post.createPass<PixelatePass>()->setEnabled(false);
+
     post.createPass<GodRaysPass>()->setEnabled(false);
     post.createPass<ContrastPass>()->setEnabled(false);
     post.createPass<FakeSSSPass>()->setEnabled(false);
     post.createPass<HorizontalTiltShifPass>()->setEnabled(false);
     
-    post.createPass<LUTPass>()->setEnabled(false);
+    //post.createPass<LUTPass>()->setEnabled(false);
     post.createPass<RGBShiftPass>()->setEnabled(false);
     post.createPass<RimHighlightingPass>()->setEnabled(false);
     post.createPass<ZoomBlurPass>()->setEnabled(false);
     post.createPass<SSAOPass>()->setEnabled(false);
     
-    post.createPass<PixelatePass>()->setEnabled(false);
 
     syphonOut.setName("HubbubVJ");
     
@@ -70,6 +72,7 @@ void ofApp::update(){
     player.setSpeed(speed);
     shape01.update();
     shape02.update();
+    shape03.update();
     
     //drum hit bools
     if (beat.kick() > 0) {
@@ -79,11 +82,13 @@ void ofApp::update(){
     }
     
     if (beat.snare() > 0) {
+        shape02.expanding = true;
         snareHit = true;
         cout << "Snare "<< endl;
     }
     
     if (beat.hihat() > 0) {
+        shape03.expanding = true;
         cymbalHit = true;
         cout << "Hat "<< endl;
     }
@@ -98,6 +103,7 @@ void ofApp::draw(){
     post.begin();
     shape01.draw();
     shape02.draw();
+    shape03.draw();
     post.end();
     
     syphonOut.publishScreen();
@@ -133,9 +139,22 @@ void ofApp::exit(){
 }
 
 //--------------------------------------------------------------
+void ofApp::randomise(){
+    shape01.randomise();
+    shape02.randomise();
+    shape03.randomise();
+    for (unsigned i = 0; i < post.size(); i++){
+        if(ofRandom(10.0) < 3) post[i]->setEnabled(true);
+        else post[i]->setEnabled(false);
+    }
+}
+
+//--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     unsigned idx = key - '0';
     if (idx < post.size()) post[idx]->setEnabled(!post[idx]->getEnabled());
+    
+    if (key == 'r') randomise();
 }
 
 //--------------------------------------------------------------

@@ -16,6 +16,7 @@ public:
     void setup();
     void draw();
     void update();
+    void randomise();
     
     ofParameterGroup shapeParams;
     ofParameter<int> circleRes;

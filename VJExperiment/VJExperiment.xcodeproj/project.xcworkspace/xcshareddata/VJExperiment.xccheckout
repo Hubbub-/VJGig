@@ -40,7 +40,7 @@
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
 		<string>../../../../addons/ofxUI</string>
 		<key>90E2F969A762FB62C413A0C44D1F334E6EC3F531</key>
-		<string>../../../../../addons/ofxMidi</string>
+		<string>../../../../addons/ofxMidi</string>
 		<key>95F70890EFD46183734FEDFE52CF53391DE6937E</key>
 		<string>../../../../addons/ofxPostProcessing</string>
 		<key>E1973EE936B32FD6C1A9080FB86363F99151DFAC</key>

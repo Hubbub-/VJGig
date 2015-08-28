@@ -17,14 +17,14 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uhlBbEvYgX5qgXVK+NYbMt9iD94=
+			J+u1oLozDs1fokeMd1TUxTzZ4Es=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		EaMgyBtKF5O5Y2DEnDoKUifsrdw=
+		v4It+3mbWabk5II9RbMvzlUTv70=
 		</data>
 		<key>Resources/PowerManagement.plist</key>
 		<data>
@@ -32,7 +32,7 @@
 		</data>
 		<key>Resources/version.plist</key>
 		<data>
-		ocFY10tbntUSIvTTUekZvNT2AD4=
+		yoadh9ATKTtvzIbtQ4KY4xAQWhQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -50,14 +50,14 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uhlBbEvYgX5qgXVK+NYbMt9iD94=
+			J+u1oLozDs1fokeMd1TUxTzZ4Es=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		EaMgyBtKF5O5Y2DEnDoKUifsrdw=
+		v4It+3mbWabk5II9RbMvzlUTv70=
 		</data>
 		<key>Resources/PowerManagement.plist</key>
 		<data>
@@ -65,7 +65,7 @@
 		</data>
 		<key>Resources/version.plist</key>
 		<data>
-		ocFY10tbntUSIvTTUekZvNT2AD4=
+		yoadh9ATKTtvzIbtQ4KY4xAQWhQ=
 		</data>
 	</dict>
 	<key>rules</key>

@@ -66,6 +66,25 @@ void ShapeClass::draw() {
     
 }
 
+//--------------------------------------------------------------
+void ShapeClass::randomise(){
+    
+    circleRes = ofRandom(3.0, 60.0);
+    release = ofRandom(1.0);
+    size = ofRandom(30.0);
+    
+    posX = ofRandom(-500.0, 500.0);
+    posY = ofRandom(-300.0, 300.0);
+    
+    rotateX = ofRandom(-1.0, 1.0);
+    rotateY = ofRandom(-1.0, 1.0);
+    rotateZ = ofRandom(-1.0, 1.0);
+    
+    red = ofRandom(255);
+    green = ofRandom(255);
+    blue = ofRandom(255);
+    alpha = ofRandom(150, 255);
+}
 
 
 
