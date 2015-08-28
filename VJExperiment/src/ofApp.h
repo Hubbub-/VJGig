@@ -8,7 +8,6 @@
 #include "ofxSyphon.h"
 #include "ofxMidi.h"
 
-
 class ofApp : public ofBaseApp, public ofxMidiListener{
 
 	public:
@@ -26,6 +25,7 @@ class ofApp : public ofBaseApp, public ofxMidiListener{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
         void exit();
+        void randomise();
     
         void audioReceived(float*, int, int);
         void newMidiMessage(ofxMidiMessage& eventArgs);
@@ -38,33 +38,32 @@ class ofApp : public ofBaseApp, public ofxMidiListener{
     
     ofxMidiIn midiIn;
     ofxMidiMessage midiMessage;
+
     
     // scene stuff
     ofxPostProcessing post;
-
+    
     
     bool kickHit;
     bool snareHit;
     bool cymbalHit;
     
-
+    
     ofxSyphonServer syphonOut;
-
-
+    
+    
     
     ofParameter<float> volume;
     ofParameter<float> speed;
     ofParameterGroup guiGroup;
     
     ShapeClass shape01;
-    ShapeClass shape02;
+    ShapeClass shape02, shape03;
     
     ofSoundPlayer player;
     
     ofxBeat beat;
     
     ofxPanel gui;
-    
-    
-		
+  
 };
