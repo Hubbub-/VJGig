@@ -6,9 +6,10 @@
 #include "ofxPostProcessing.h"
 #include "ofxBeat.h"
 #include "ofxSyphon.h"
+#include "ofxMidi.h"
 
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp, public ofxMidiListener{
 
 	public:
 		void setup();
@@ -26,7 +27,17 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         void exit();
     
-       void audioReceived(float*, int, int);
+        void audioReceived(float*, int, int);
+        void newMidiMessage(ofxMidiMessage& eventArgs);
+    
+        void postChainToggle();
+    
+    
+    //midi stuff
+    stringstream text;
+    
+    ofxMidiIn midiIn;
+    ofxMidiMessage midiMessage;
     
     // scene stuff
     ofxPostProcessing post;

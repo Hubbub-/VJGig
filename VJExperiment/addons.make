@@ -1,6 +1,8 @@
 ofxGui
+ofxOsc
 ofxXmlSettings
 ofxBeat
+ofxMidi
 ofxPostProcessing
 ofxRules
 ofxStateMachine

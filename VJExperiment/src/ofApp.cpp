@@ -4,6 +4,26 @@
 void ofApp::setup(){
     
     ofSetVerticalSync(true);
+    ofSetLogLevel(OF_LOG_VERBOSE);
+    
+    // print input ports to console
+    midiIn.listPorts(); // via instance
+    //ofxMidiIn::listPorts(); // via static as well
+    
+    // open port by number (you may need to change this)
+    midiIn.openPort(1);
+    //midiIn.openPort("IAC Pure Data In");	// by name
+    //midiIn.openVirtualPort("ofxMidiIn Input"); // open a virtual port
+    
+    // don't ignore sysex, timing, & active sense messages,
+    // these are ignored by default
+    midiIn.ignoreTypes(false, false, false);
+    
+    // add ofApp as a listener
+    midiIn.addListener(this);
+    
+    // print received messages to the console
+    midiIn.setVerbose(true);
     
     ofSoundStreamSetup(0, 1, this, 44100, beat.getBufferSize(), 4);
     
@@ -39,15 +59,19 @@ void ofApp::setup(){
     post.createPass<NoiseWarpPass>()->setEnabled(true);
     post.createPass<BleachBypassPass>()->setEnabled(false);
     post.createPass<EdgePass>()->setEnabled(true);
-    post.createPass<VerticalTiltShifPass>()->setEnabled(false);
-    
     post.createPass<GodRaysPass>()->setEnabled(false);
     post.createPass<ContrastPass>()->setEnabled(false);
+    
+    
+    post.createPass<VerticalTiltShifPass>()->setEnabled(false);
+    post.createPass<LUTPass>()->setEnabled(false);
+    post.createPass<RGBShiftPass>()->setEnabled(false);
+
     post.createPass<FakeSSSPass>()->setEnabled(false);
     post.createPass<HorizontalTiltShifPass>()->setEnabled(false);
     
-    post.createPass<LUTPass>()->setEnabled(false);
-    post.createPass<RGBShiftPass>()->setEnabled(false);
+    
+    
     post.createPass<RimHighlightingPass>()->setEnabled(false);
     post.createPass<ZoomBlurPass>()->setEnabled(false);
     post.createPass<SSAOPass>()->setEnabled(false);
@@ -62,6 +86,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
+    
     beat.update(ofGetElapsedTimeMillis());
     //cout << beat.kick() << "," << beat.snare() << "," << beat.hihat() << endl;
     
@@ -75,21 +100,20 @@ void ofApp::update(){
     if (beat.kick() > 0) {
         shape01.expanding = true;
         shape02.expanding = true;
-        cout << "Kick "<< endl;
+        //cout << "Kick "<< endl;
     }
     
     if (beat.snare() > 0) {
         snareHit = true;
-        cout << "Snare "<< endl;
+        //cout << "Snare "<< endl;
     }
     
     if (beat.hihat() > 0) {
         cymbalHit = true;
-        cout << "Hat "<< endl;
+        //cout << "Hat "<< endl;
     }
-    
-    
 
+    postChainToggle();
 }
 
 //--------------------------------------------------------------
@@ -118,6 +142,8 @@ void ofApp::draw(){
     }
     
     gui.draw();
+    
+   
 }
 
 //--------------------------------------------------------------
@@ -129,13 +155,58 @@ void ofApp::audioReceived(float* input, int bufferSize, int nChannels) {
 
 //--------------------------------------------------------------
 void ofApp::exit(){
+    // clean up
+    midiIn.closePort();
+    midiIn.removeListener(this);
+}
 
+//--------------------------------------------------------------
+void ofApp::newMidiMessage(ofxMidiMessage& msg) {
+    
+    // make a copy of the latest message
+    midiMessage = msg;
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     unsigned idx = key - '0';
     if (idx < post.size()) post[idx]->setEnabled(!post[idx]->getEnabled());
+}
+
+//--------------------------------------------------------------
+void ofApp::postChainToggle() {
+    
+    //cout << ofxMidiMessage::getStatusString(midiMessage.status) << endl;
+    //cout << "pitch: " << midiMessage.pitch;
+    
+    if (ofxMidiMessage::getStatusString(midiMessage.status) == "Note On"){
+    
+        if (midiMessage.pitch == 9) {
+            cout << "Toggle: 1" << endl;
+        }
+        else if (midiMessage.pitch == 10) {
+            cout << "Toggle: 2" << endl;
+        }
+        else if (midiMessage.pitch == 11) {
+            cout << "Toggle: 3" << endl;
+        }
+        else if (midiMessage.pitch == 12) {
+            cout << "Toggle: 4" << endl;
+        }
+        else if (midiMessage.pitch == 25) {
+            cout << "Toggle: 5" << endl;
+        }
+        else if (midiMessage.pitch == 26) {
+            cout << "Toggle: 6" << endl;
+        }
+        else if (midiMessage.pitch == 27) {
+            cout << "Toggle: 7" << endl;
+        }
+        else if (midiMessage.pitch == 28) {
+            cout << "Toggle: 8" << endl;
+        }
+    }
+    
 }
 
 //--------------------------------------------------------------
