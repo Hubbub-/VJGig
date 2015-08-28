@@ -195,27 +195,110 @@ void ofApp::postChainToggle() {
     
         if (midiMessage.pitch == 9) {
             cout << "Toggle: 1" << endl;
+            for (unsigned i = 0; i < post.size(); i++){
+                post[i]->setEnabled(false);
+            }
+            post[0]->setEnabled(true);
+            post[1]->setEnabled(true);
+            post[3]->setEnabled(true);
+            post[4]->setEnabled(true);
+            post[5]->setEnabled(true);
+            post[6]->setEnabled(true);
         }
         else if (midiMessage.pitch == 10) {
             cout << "Toggle: 2" << endl;
+            for (unsigned i = 0; i < post.size(); i++){
+                post[i]->setEnabled(false);
+            }
+            post[3]->setEnabled(true);
+            post[4]->setEnabled(true);
+            post[5]->setEnabled(true);
+            post[7]->setEnabled(true);
+
         }
         else if (midiMessage.pitch == 11) {
             cout << "Toggle: 3" << endl;
+            for (unsigned i = 0; i < post.size(); i++){
+                post[i]->setEnabled(false);
+            }
+            post[0]->setEnabled(true);
+            post[1]->setEnabled(true);
+            post[3]->setEnabled(true);
+            post[4]->setEnabled(true);
+            post[5]->setEnabled(true);
+            post[7]->setEnabled(true);
+
         }
         else if (midiMessage.pitch == 12) {
             cout << "Toggle: 4" << endl;
+            for (unsigned i = 0; i < post.size(); i++){
+                post[i]->setEnabled(false);
+            }
+            post[0]->setEnabled(true);
+            post[7]->setEnabled(true);
+            post[8]->setEnabled(true);
+            post[15]->setEnabled(true);
+            post[16]->setEnabled(true);
+
         }
         else if (midiMessage.pitch == 25) {
             cout << "Toggle: 5" << endl;
+            for (unsigned i = 0; i < post.size(); i++){
+                post[i]->setEnabled(false);
+            }
+            post[0]->setEnabled(true);
+            post[1]->setEnabled(true);
+            post[3]->setEnabled(true);
+            post[4]->setEnabled(true);
+            post[5]->setEnabled(true);
+            post[11]->setEnabled(true);
+            post[12]->setEnabled(true);
+            post[15]->setEnabled(true);
+            post[16]->setEnabled(true);
+
         }
         else if (midiMessage.pitch == 26) {
             cout << "Toggle: 6" << endl;
+            for (unsigned i = 0; i < post.size(); i++){
+                post[i]->setEnabled(false);
+            }
+            post[1]->setEnabled(true);
+            post[5]->setEnabled(true);
+            post[7]->setEnabled(true);
+            post[8]->setEnabled(true);
+            post[12]->setEnabled(true);
+            post[13]->setEnabled(true);
+            post[14]->setEnabled(true);
+            post[15]->setEnabled(true);
+
         }
         else if (midiMessage.pitch == 27) {
             cout << "Toggle: 7" << endl;
+            for (unsigned i = 0; i < post.size(); i++){
+                post[i]->setEnabled(false);
+            }
+            post[0]->setEnabled(true);
+            post[13]->setEnabled(true);
+            post[14]->setEnabled(true);
+            post[16]->setEnabled(true);
+
         }
         else if (midiMessage.pitch == 28) {
             cout << "Toggle: 8" << endl;
+            for (unsigned i = 0; i < post.size(); i++){
+                post[i]->setEnabled(false);
+            }
+            post[1]->setEnabled(true);
+            post[4]->setEnabled(true);
+            post[5]->setEnabled(true);
+            post[6]->setEnabled(true);
+            post[10]->setEnabled(true);
+            post[12]->setEnabled(true);
+            post[13]->setEnabled(true);
+            post[14]->setEnabled(true);
+            post[16]->setEnabled(true);
+            post[17]->setEnabled(true);
+
         }
     }
     
